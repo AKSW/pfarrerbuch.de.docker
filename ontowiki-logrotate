@@ -1,0 +1,10 @@
+/var/www/logs/*.log {
+	daily
+	missingok
+	rotate 15
+	compress
+	delaycompress
+	notifempty
+	create 0660 www-data www-data
+	nosharedscripts
+}
