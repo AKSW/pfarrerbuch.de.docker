@@ -12,6 +12,27 @@ service php5-fpm start
 echo "starting nginx …"
 service nginx start
 
+# configure OntoWiki site extensions
+sed -i s,model\ \=\ \"http://pfarrerbuch.aksw.org/\"$,model\ \=\ \"$OW_SITE_MODEL\",g config.ini
+
+if [ -z ${OW_SITE_INDEX+x} ]
+then
+    # $OW_SITE_INDEX not set
+    sed -i s,index\ \=\ \"http://pfarrerbuch.aksw.org/About\"$,index\ \=\ \"${OW_SITE_MODEL}About\",g config.ini
+else
+    # $OW_SITE_INDEX set
+    sed -i s,index\ \=\ \"http://pfarrerbuch.aksw.org/About\"$,index\ \=\ \"$OW_SITE_INDEX\",g config.ini
+fi
+
+if [ -z ${OW_SITE_ERROR+x} ]
+then
+    # $OW_SITE_ERROR not set
+    sed -i s,error\ \=\ \"http://pfarrerbuch.aksw.org/NotFound\"$,error\ \=\ \"${OW_SITE_MODEL}NotFound\",g config.ini
+else
+    # $OW_SITE_ERROR set
+    sed -i s,error\ \=\ \"http://pfarrerbuch.aksw.org/NotFound\"$,error\ \=\ \"$OW_SITE_ERROR\",g config.ini
+fi
+
 echo "define dump_one_graph …"
 cat dump_one_graph.virtuoso.sql | isql-vt 1111 dba dba
 

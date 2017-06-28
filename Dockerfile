@@ -8,6 +8,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # See also: https://natanael.arndt.xyz/2017/06/23/Forward-SSH-Authentication-To-Docker-Container
 ENV SSH_AUTH_SOCK /var/run/ssh-agent.sock
 
+# OntoWiki Site Extension configuration
+ENV OW_SITE_MODEL "http://pfarrerbuch.aksw.org/"
+
 # install some basic packages
 # install the nginx server with PHP
 # install virtuoso
