@@ -39,7 +39,11 @@ echo "define dump_one_graph …"
 cat dump_one_graph.virtuoso.sql | isql-vt 1111 dba dba
 
 echo "loading data into database …"
-git clone $MODEL_REPO models
+if git status models ; then
+  echo "Repository exists already"
+else
+  git clone $MODEL_REPO models
+fi
 cd models
 ./import.sh
 

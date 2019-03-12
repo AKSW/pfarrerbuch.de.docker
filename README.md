@@ -15,8 +15,10 @@ If you are using a different default model resp. base namespace you can customiz
 
 ### Volumes
 
-    -v <some path>/id_rsa:/root/.ssh/id_rsa
+    -v <some path>/id_rsa:/root/.ssh/id_rsa *or*
+    -v $SSH_AUTH_SOCK:/var/run/ssh-agent.sock
     -v <some path>/known_hosts:/root/.ssh/known_hosts
+    -v <some path>/models:/models
 
 #### Environment Variables
 
