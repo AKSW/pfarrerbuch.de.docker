@@ -39,8 +39,8 @@ echo "define dump_one_graph …"
 cat dump_one_graph.virtuoso.sql | isql-vt 1111 dba dba
 
 echo "loading data into database …"
-if git status models ; then
-  echo "Repository exists already"
+if [ -d models/.git ] ; then
+  echo "Repository already exists"
 else
   git clone $MODEL_REPO models
 fi
