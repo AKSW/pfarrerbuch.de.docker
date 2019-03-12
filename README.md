@@ -27,3 +27,5 @@ If you are using a different default model resp. base namespace you can customiz
     -e "OW_SITE_MODEL=http://pfarrerbuch.aksw.org/"
     -e "OW_SITE_INDEX=http://pfarrerbuch.aksw.org/About"
     -e "OW_SITE_ERROR=http://pfarrerbuch.aksw.org/NotFound"
+
+virtuoso-opensource_7.1_amd64.deb was built from the sourcecode of https://github.com/openlink/virtuoso-opensource
