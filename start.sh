@@ -55,7 +55,7 @@ git config user.email "backup@pfarrerbuch.de"
 git config user.name "Backup Bot"
 git config push.default matching
 
-if [ "$BACKUP" == "false" ]
+if [ "$BACKUP" = "false" ]
 then
     echo "backup cronjob is disabled!"
 else
