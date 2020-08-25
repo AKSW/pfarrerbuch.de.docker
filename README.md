@@ -1,4 +1,8 @@
-This is the docker file for the http://pfarrerbuch.aksw.org/ page
+This is an early version of the docker file for the https://pfarrerbuch.aksw.org/ page.
+
+**This repository is archived now.** It is superseeded by our docker-compose setup: https://github.com/Dockerizing/Pfarrerbuch.compose which includes the Pfarrerbuch interface from: https://github.com/Dockerizing/Pfarrerbuch.
+
+Start of old README:
 
 run with
 
